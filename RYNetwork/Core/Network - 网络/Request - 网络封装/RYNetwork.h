@@ -12,7 +12,6 @@
 #define NET_FAIL_CONNECT_INTERNET @"网络出现了问题"
 #define NET_DOMAIN @"http://apis.baidu.com/heweather/weather/free"
 
-
 typedef void(^RYNetWorkRequestSuccess)(id response);
 typedef void(^RYNetWorkRequestFailed)(id response);
 

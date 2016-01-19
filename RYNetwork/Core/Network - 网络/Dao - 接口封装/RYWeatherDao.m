@@ -25,7 +25,7 @@
                     andSuccess:(RYDaoRequestSuccess)success
                      andFailed:(RYDaoRequestFailed)failed
 {
-    // 基础URL
+    // 接口地址
     NSString *tUrl = [self setBaseUrlWithBranchUrl:@""];
     // 服务器请求的参数
     NSDictionary *tParameter = @{@"city":city};
@@ -36,11 +36,13 @@
                          andParameter:tEncryptParameter
                    andSuccessCallBack:^(id response) {
                        
-                       NSLog(@"success repsonse = %@", response);
+                       // 解密后的数据返回
+                       NSObject *tResponse = [self decryptDataWithServiceResponse:response];
+                       success(tResponse);
                        
                    } andFailedCallBack:^(id response) {
                        
-                       NSLog(@"fail repsonse = %@", response);
+                       failed(response);
                        
                    }];
 }

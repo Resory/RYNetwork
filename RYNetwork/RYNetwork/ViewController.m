@@ -20,6 +20,8 @@
 
     [[RYWeatherDao shareInstance] getWeatherInfoWithCity:@"beijing" andSuccess:^(id response) {
         
+        NSLog(@"respone = %@",response);
+        
     } andFailed:^(id response) {
         
     }];
